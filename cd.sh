@@ -39,7 +39,7 @@ set_menu_choice(){
   clear
   echo "options :-"
   echo "   a) add new cd"
-  echo "   b) find cd"
+  echo "   f) find cd"
   echo "   c) count the cds and tracks in the catalog"
   if [ "$cdcatnum" != "" ]; then
     echo "   l) list tracks on $cdtitle"
@@ -54,15 +54,15 @@ set_menu_choice(){
 }
 
 #向數據庫文件裏添加數據
-inserit_title(){
+insert_title(){
   echo $* >> $title_file
   return
 }
 insert_track(){
-  echo $* >> $track_file
+  echo $* >> $tracks_file
   return
 }
-insert_record_tracks(){
+add_record_tracks(){
   echo "enter track information for this cd"
   echo "when no more tracks enter q"
   cdtrack=1
